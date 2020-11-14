@@ -3,7 +3,12 @@ from __future__ import unicode_literals
 import hashlib
 import logging
 from collections import OrderedDict, defaultdict
-from urllib import urlencode
+
+try:
+    from urllib import urlencode
+except ImportError:
+    from urllib.parse import urlencode
+    
 from urllib2 import quote
 from urlparse import parse_qs, urljoin, urlsplit, urlunsplit
 
